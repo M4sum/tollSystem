@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <div class="jumbotron text-center">
+        <h1>Welcome to DASH Toll Services</h1>
+        <form method="POST">
+            <p class="lead">Querry</p>
+            <p><input name="querry" required="required" type="text"></p>
+            <p><button class="btn btn-primary" value="search" name="submit" type="submit">Submit</button></p>
+        </form>
+    </div>
+
+    <p class="text-center"><table style="border: 1px solid black">
+
+        {% for i in range(len) %}
+            {% if i==0 %}
+                <tr style=" border: 1px solid black">
+                {% for key in result[i].keys() %}
+                    <th style="padding: 15; border: 1px solid black">{{key}}</th>
+                {% endfor %}
+                </tr>
+            {% endif %}
+
+            <tr style=" border: 1px solid black">
+            {% for val in result[i].values() %}
+                <td style="padding: 15; border: 1px solid black">{{val}}</td>
+            {% endfor %}
+            </tr>
+        
+        {% endfor %}
+
+    </table></p>
+
+{% endblock %}

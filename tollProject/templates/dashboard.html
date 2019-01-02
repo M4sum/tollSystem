@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="jumbotron text-center">
+    <h1>Welcome {{name}}</h1>
+    <form method="POST">
+        <p class="lead">Search Owner details</p>
+        <p><input name="name" required="required" type="text"></p>
+        <p><button class="btn btn-primary" value="search" name="action" type="submit">Submit</button></p>
+    </form>
+</div>
+
+<div class="text-center">
+
+    <p><h3>Name: {{oname}}</h3></p>
+    <p><h3>Vehicle No: {{vno}}</h3></p>
+    <p><h3>Contact: {{cno}}</h3></p>
+    <p><h3>Balance: {{balance}}</h3></p>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <div class="jumbotron text-center">
+        <h1>Welcome to DASH Toll Services</h1>
+        <form method="POST">
+            <p class="lead">Enter RFID No.</p>
+            <p><input name="rfid" required="required" type="number"></p>
+            <p class="lead">Enter fair type</p>
+            <p><select name="ftype" required="required">
+                <option value="O">Oneway</option>
+                <option value="R">Return</option>
+            </select></p>
+            <p><button class="btn btn-primary" type="submit">Submit</button></p>
+        </form>
+    </div>
+
+
+    <p><h3>Vehicle No.:    {{vno['vehicle_no']}}</h3></p>
+    <p><h3>Owner:    {{oname['owner_name']}}</h3></p>
+    <p><h3>{{rate}}</h3></p>
+
+{% endblock %}
